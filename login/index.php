@@ -1,3 +1,39 @@
+<?php 
+
+require_once("../db/config.php");
+session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+	   
+      // username and password sent from form 
+$username = mysqli_real_escape_string($db,$_POST['username']);
+$pass = mysqli_real_escape_string($db,$_POST['pass']); 
+$pwhash = hash('sha256',$pass);
+ 
+$sql = "SELECT id FROM users WHERE username = '$username' and Password = '$pwhash'";
+$result = mysqli_query($db,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$active = $row['active'];
+
+$count = mysqli_num_rows($result);
+
+// If result matched $myusername and $mypassword, table row must be 1 row
+  
+if($count == 1) {
+   session_register("myusername");
+   $_SESSION['logged_user'] = $username;
+   
+   header("Location: ../index.php");
+}else {
+   header("Location: index.php");
+}
+
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +68,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('../images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="index.php">
 				<span class="login100-form-logo">
 						
 						<img src="../images/CompanyLogo.png">
