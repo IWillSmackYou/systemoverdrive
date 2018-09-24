@@ -10,7 +10,7 @@ $username = mysqli_real_escape_string($db,$_POST['username']);
 $pass = mysqli_real_escape_string($db,$_POST['pass']); 
 $pwhash = hash('sha256',$pass);
  
-$sql = "SELECT id FROM users WHERE username = '$username' and Password = '$pwhash'";
+$sql = "SELECT ID FROM users WHERE Username = '$username' AND Password = '$pwhash'";
 $result = mysqli_query($db,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $active = $row['active'];
