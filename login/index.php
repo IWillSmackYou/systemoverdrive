@@ -5,6 +5,65 @@ require_once '../google/gpConfig.php';
 require_once '../google/User.class.php';
 require_once("../db/config.php");
 
+if(isset($_GET['code'])){
+    $gClient->authenticate($_GET['code']);
+    $_SESSION['token'] = $gClient->getAccessToken();
+    header('Location: ' . filter_var($redirectURL, FILTER_SANITIZE_URL));
+}
+
+if(isset($_SESSION['token'])){
+    $gClient->setAccessToken($_SESSION['token']);
+}
+
+if($gClient->getAccessToken()){
+    // Get user profile data from google
+    $gpUserProfile = $google_oauthV2->userinfo->get();
+    
+    // Initialize User class
+    $user = new User();
+    
+    // Getting user profile info
+    $gpUserData = array();
+    $gpUserData['oauth_uid']  = !empty($gpUserProfile['id'])?$gpUserProfile['id']:'';
+    $gpUserData['first_name'] = !empty($gpUserProfile['given_name'])?$gpUserProfile['given_name']:'';
+    $gpUserData['last_name']  = !empty($gpUserProfile['family_name'])?$gpUserProfile['family_name']:'';
+    $gpUserData['email']      = !empty($gpUserProfile['email'])?$gpUserProfile['email']:'';
+    $gpUserData['gender']     = !empty($gpUserProfile['gender'])?$gpUserProfile['gender']:'';
+    $gpUserData['locale']     = !empty($gpUserProfile['locale'])?$gpUserProfile['locale']:'';
+    $gpUserData['picture']    = !empty($gpUserProfile['picture'])?$gpUserProfile['picture']:'';
+    $gpUserData['link']       = !empty($gpUserProfile['link'])?$gpUserProfile['link']:'';
+    
+   
+	   
+	
+	if(isset($_GET['code'])){
+  $sql = "SELECT id FROM clients WHERE oauth_uid = '" . $gpUserData['oauth_uid']. "' AND email = '" . $gpUserData['email'] . "'";
+  $result = mysqli_query($db,$sql);
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $count = mysqli_num_rows($result);
+  
+  // If result matched $myusername and $mypassword, table row must be 1 row
+	
+  if($count == 1) {
+	// session_register("username");
+	 $_SESSION['logged_user_email'] =  $gpUserData['email'];
+	 
+	 header("Location: ../index.php");
+  }else {
+	 header("Location: index.php");
+  }
+  
+}
+  
+}else{
+    // Get login url
+    $authUrl = $gClient->createAuthUrl();
+    
+    // Render google login button
+    $output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><center><img src="images/google-sign-in-btn.png" style="width:87%;" alt=""/></a></center>';
+}
+
+
 if(session_id() == '' || !isset($_SESSION)){
 session_start();
 }
@@ -117,14 +176,7 @@ if($count == 1) {
 					</div>
 
 					<div class="flex-c-m">
-					<?php 
-							// Get login url
-    $authUrl = $gClient->createAuthUrl();
-    
-    // Render google login button
-	$output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><center><img src="images/google-sign-in-btn.png" style="width:86%;" alt=""/></a></center>';
-	
-						?>
+					
 						<?php echo $output; ?>
 						</a>
 					</div>
