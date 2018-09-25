@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2018 at 11:21 AM
+-- Generation Time: Sep 25, 2018 at 09:49 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -25,45 +25,54 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `clients`
 --
 
-CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `Username` varchar(350) NOT NULL,
-  `fullName` varchar(350) NOT NULL,
-  `Password` varchar(500) NOT NULL,
-  `Email` varchar(400) NOT NULL,
+CREATE TABLE `clients` (
+  `id` int(11) NOT NULL,
+  `username` varchar(450) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `PIN` int(20) NOT NULL,
-  `Address` varchar(450) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `oauth_provider` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `oauth_uid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `locale` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `clients`
 --
 
-INSERT INTO `users` (`ID`, `Username`, `fullName`, `Password`, `Email`, `PIN`, `Address`) VALUES
-(1, 'admin', 'Bing Xuan', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'lowbingxuan2016@gmail.com', 1234, '');
+INSERT INTO `clients` (`id`, `username`, `password`, `address`, `PIN`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`) VALUES
+(1, 'admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'BLK 534 Ang Mo Kio Ave 3', 1234, '', '', 'Admin', 'Admin', 'admin@admin.com.sg', 'Male', NULL, NULL, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `users`
+-- Indexes for table `clients`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `clients`
 --
-ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `clients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

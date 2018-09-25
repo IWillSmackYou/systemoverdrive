@@ -122,7 +122,7 @@ if($count == 1) {
     $authUrl = $gClient->createAuthUrl();
     
     // Render google login button
-	$output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><img src="images/google-sign-in-btn.png" alt=""/></a>';
+	$output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><center><img src="images/google-sign-in-btn.png" style="width:86%;" alt=""/></a></center>';
 	
 						?>
 						<?php echo $output; ?>
