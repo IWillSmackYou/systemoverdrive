@@ -20,7 +20,7 @@ $count = mysqli_num_rows($result);
 // If result matched $myusername and $mypassword, table row must be 1 row
   
 if($count == 1) {
-   session_register("username");
+  // session_register("username");
    $_SESSION['logged_user'] = $username;
    
    header("Location: ../index.php");
@@ -29,7 +29,7 @@ if($count == 1) {
 }
 
 }else{
-	header("Location: index.php");
+	
 }
 
 ?>
