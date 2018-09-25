@@ -1,7 +1,13 @@
 <?php 
 
+// Include config file && User class
+require_once '../google/gpConfig.php';
+require_once '../google/User.class.php';
 require_once("../db/config.php");
+
+if(session_id() == '' || !isset($_SESSION)){
 session_start();
+}
    
    if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	   
@@ -111,14 +117,15 @@ if($count == 1) {
 					</div>
 
 					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						
-
-						<a href="#" class="login100-social-item bg3">
-							<i class="fa fa-google"></i>
+					<?php 
+							// Get login url
+    $authUrl = $gClient->createAuthUrl();
+    
+    // Render google login button
+	$output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><img src="images/google-sign-in-btn.png" alt=""/></a>';
+	
+						?>
+						<?php echo $output; ?>
 						</a>
 					</div>
 

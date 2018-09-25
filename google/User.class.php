@@ -5,17 +5,17 @@
  * @Author Bing Xuan & Anna Yap
  */
 
-require_once("../db/config.php");
+include("../db/config.php");
 
 class User {
 
   
 
-    private $dbHost     = $servername;
-    private $dbUsername = $username;
-    private $dbPassword = $password;
-    private $dbName     = $dnname;
-    private $userTbl    = $;
+    private $dbHost     = "localhost";
+    private $dbUsername = "root";
+    private $dbPassword = "123";
+    private $dbName     = "sysod";
+    private $userTbl    = "clients";
     
     function __construct(){
         if(!isset($this->db)){
