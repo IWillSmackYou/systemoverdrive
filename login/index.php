@@ -35,25 +35,30 @@ if($gClient->getAccessToken()){
     
    
 	   
-	
-	if(isset($_GET['code'])){
+		// username and password sent from form 
+  $username = mysqli_real_escape_string($db,$_POST['username']);
+  $pass = mysqli_real_escape_string($db,$_POST['pass']); 
+  $pwhash = hash('sha256',$pass);
+  
   $sql = "SELECT id FROM clients WHERE oauth_uid = '" . $gpUserData['oauth_uid']. "' AND email = '" . $gpUserData['email'] . "'";
   $result = mysqli_query($db,$sql);
   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $active = $row['active'];
+  
   $count = mysqli_num_rows($result);
   
   // If result matched $myusername and $mypassword, table row must be 1 row
 	
   if($count == 1) {
 	// session_register("username");
-	 $_SESSION['logged_user_email'] =  $gpUserData['email'];
+	 $_SESSION['logged_user'] = $username;
 	 
 	 header("Location: ../index.php");
   }else {
-	 header("Location: index.php");
+	
   }
   
-}
+    
   
 }else{
     // Get login url
