@@ -35,10 +35,7 @@ if($gClient->getAccessToken()){
     
    
 	   
-		// username and password sent from form 
-  $username = mysqli_real_escape_string($db,$_POST['username']);
-  $pass = mysqli_real_escape_string($db,$_POST['pass']); 
-  $pwhash = hash('sha256',$pass);
+		
   
   $sql = "SELECT id FROM clients WHERE oauth_uid = '" . $gpUserData['oauth_uid']. "' AND email = '" . $gpUserData['email'] . "'";
   $result = mysqli_query($db,$sql);
@@ -51,11 +48,25 @@ if($gClient->getAccessToken()){
 	
   if($count == 1) {
 	// session_register("username");
-	 $_SESSION['logged_user'] = $username;
+	 $_SESSION['logged_user_email'] = $email;
 	 
 	 header("Location: ../index.php");
   }else {
-	
+
+
+// Remove token and user data from the session
+unset($_SESSION['token']);
+unset($_SESSION['userData']);
+
+// Reset OAuth access token
+$gClient->revokeToken();
+
+// Destroy entire session data
+session_destroy();
+
+
+
+	header("Refresh:5; url=index.php");
   }
   
     
