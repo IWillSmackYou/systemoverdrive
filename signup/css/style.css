@@ -198,9 +198,9 @@ select option {
   padding-right: 0;
 }
 .col-third {
-  padding-right: 10px;
+  
   float: left;
-  width: 33.33333333%;
+  width: 40px;
 }
 .col-third:last-of-type {
   padding-right: 0;

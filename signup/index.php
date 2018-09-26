@@ -50,16 +50,19 @@
     </div>
     <div class="row">
       <div class="col-half">
-        <h4>Date of Birth</h4>
+        <h4>PIN Number</h4>
         <div class="input-group">
           <div class="col-third">
-            <input type="text" placeholder="DD"/>
+            <input type="text" placeholder=""/>
           </div>
           <div class="col-third">
-            <input type="text" placeholder="MM"/>
+            <input type="text" placeholder=""/>
           </div>
           <div class="col-third">
-            <input type="text" placeholder="YYYY"/>
+            <input type="text" placeholder=""/>
+          </div>
+          <div class="col-third">
+            <input type="text" placeholder=""/>
           </div>
         </div>
       </div>
