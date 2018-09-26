@@ -13,6 +13,13 @@
 
   
 </head>
+<script>
+$(".inputs").keyup(function () {
+   if (this.value.length == this.maxLength) {
+     $(this).nextAll('.inputs:enabled:first').focus();
+   }
+});
+</script>
 
 <body style="background-image:url(img/bg.jpg); background-size: cover; background-repeat: no-repeat;">
 
@@ -53,16 +60,16 @@
         <h4>PIN Number</h4>
         <div class="input-group">
           <div class="col-third">
-            <input type="text" placeholder=""/>
+            <input class="inputs" type="text" maxLength="1" />
           </div>
           <div class="col-third">
-            <input type="text" placeholder=""/>
+            <input class="inputs" type="text" maxLength="1" />
           </div>
           <div class="col-third">
-            <input type="text" placeholder=""/>
+            <input class="inputs" type="text" maxLength="1"/>
           </div>
           <div class="col-third">
-            <input type="text" placeholder=""/>
+            <input class="inputs" type="text" maxLength="1" />
           </div>
         </div>
       </div>
@@ -99,7 +106,7 @@
   </form>
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   
 
     <script  src="js/index.js"></script>
