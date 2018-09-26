@@ -70,6 +70,17 @@
           <label for="gender-female">Female</label>
         </div>
       </div>
+      </div>
+
+
+
+<div class="row">
+<input type="submit" value="Emerald" class="emerald-flat-button">
+</div>
+
+
+
+
     </div>
     
    <!-- <div class="row">
@@ -79,16 +90,7 @@
         <label for="terms">I accept the terms and conditions for signing up to this service, and hereby confirm I have read the privacy policy.</label>
       </div>
     </div>-->
-    <div class="row">
-    <div class="container-login100-form-btn ">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn ">
-								SignUp
-							</button>
-						</div>
-                    </div>
-</div>
+    
   </form>
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
