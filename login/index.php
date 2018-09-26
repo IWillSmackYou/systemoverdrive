@@ -54,19 +54,15 @@ if($gClient->getAccessToken()){
   }else {
 
 
-// Remove token and user data from the session
-unset($_SESSION['token']);
-unset($_SESSION['userData']);
 
-// Reset OAuth access token
-$gClient->revokeToken();
+// Insert or update user data to the database
+$gpUserData['oauth_provider'] = 'google';
+$userData = $user->checkUser($gpUserData);
 
-// Destroy entire session data
-session_destroy();
+header("Location: ../signup/index.php");
 
 
 
-	header("Refresh:5; url=index.php");
   }
   
     
