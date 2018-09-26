@@ -43,7 +43,7 @@
       </div>
       <div class="input-group input-group-icon">
         <input type="text" placeholder="Address"/>
-        <div class="input-icon"><i class="fa fa-address-book-o"></i></div>
+        <div class="input-icon"><i class="fa fa-picture-o"></i></div>
       </div>
      
      
@@ -76,7 +76,7 @@
 
 
 
-<div class="row" style="padding-top:22px;">
+<div class="row" style="padding-top:20px;">
 <input type="submit" value="Sign Up" class="emerald-flat-button">
 </div>
 
