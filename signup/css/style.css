@@ -45,7 +45,7 @@ input[type="radio"] {
 }
 input[type="radio"] + label,
 select {
-  display: inline-block;
+ 
   width: 50%;
   text-align: center;
   float: left;
