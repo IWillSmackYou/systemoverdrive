@@ -40,20 +40,38 @@ if($gClient->getAccessToken()){
   $sql = "SELECT id FROM clients WHERE oauth_uid = '" . $gpUserData['oauth_uid']. "' AND email = '" . $gpUserData['email'] . "'";
   $result = mysqli_query($db,$sql);
   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-  $active = $row['active'];
+ 
   
   $count = mysqli_num_rows($result);
   
   // If result matched $myusername and $mypassword, table row must be 1 row
 	
-  if($count == 1) {
+  if($count == 1 ) {
 	// session_register("username");
+
+	$sql = "SELECT id FROM clients WHERE oauth_uid = '" . $gpUserData['oauth_uid']. "' AND username = '' AND password = '' AND address = '' AND PIN = ''";
+	$result = mysqli_query($db,$sql);
+	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+   
+	$count = 0;
+	$count = mysqli_num_rows($result);
+
+	if($count == 1) {
+
 	 $_SESSION['logged_user_email'] = $email;
 	 
-	 header("Location: ../index.php");
-  }else {
 
 
+	 header("Location: ../signup/merge.php");
+	}else{
+		$_SESSION['logged_user_email'] = $email;
+	 
+
+
+		header("Location: ../index.php");
+	}
+  }
+  else{
 
 // Insert or update user data to the database
 $gpUserData['oauth_provider'] = 'google';

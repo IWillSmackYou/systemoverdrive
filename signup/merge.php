@@ -1,3 +1,8 @@
+<?php
+
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -18,7 +23,7 @@
 
   
 <div class="container">
-  <form>
+  <form method="POST" action ="merge.php">
 
     <div class="row">
     
