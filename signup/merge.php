@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Sign Up Form</title>
+  <title>Complete Your Profile</title>
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
@@ -23,14 +23,25 @@
     <div class="row">
     
       <h2>One Last Thing...</h2>
+      <h4>System OverDrive Account Setup</h4>
        <div class="input-group input-group-icon">
         <input type="text" placeholder="Username"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
+
+       <div class="input-group input-group-icon">
+        <input type="password" placeholder="Password"/>
+        <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
      
       <div class="input-group input-group-icon">
         <input type="text" placeholder="Address"/>
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
+      </div>
+
+      <div class="input-group input-group-icon">
+        <input type="text" maxlength="4" placeholder="4 Characters PIN (To be used to reset password)"/>
+        <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
      
      
