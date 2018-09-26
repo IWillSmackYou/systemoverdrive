@@ -187,7 +187,7 @@ if($count == 1) {
 
 					<div class="txt1 text-center p-t-20 p-b-5">
 						<span>
-							Or Sign In Using
+							Or
 						</span>
 					</div>
 
@@ -199,12 +199,10 @@ if($count == 1) {
 
 					<div class="flex-col-c p-t-15">
 						<span class="txt1 p-b-17">
-							Not a registered user ? Click below 
+							Not a registered user? <a href="../signup/" class="txt1">Click here.</a>
 						</span>
 
-						<a href="#" class="txt2">
-							 Sign Up
-						</a>
+						
 					</div>
 				</form>
 			</div>
