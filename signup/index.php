@@ -13,13 +13,7 @@
 
   
 </head>
-<script>
-$(".inputs").keyup(function () {
-   if (this.value.length == this.maxLength) {
-     $(this).nextAll('.inputs:enabled:first').focus();
-   }
-});
-</script>
+
 
 <body style="background-image:url(img/bg.jpg); background-size: cover; background-repeat: no-repeat;">
 
@@ -57,21 +51,16 @@ $(".inputs").keyup(function () {
     </div>
     <div class="row">
       <div class="col-half">
-        <h4>PIN Number</h4>
-        <div class="input-group">
-          <div class="col-third">
-            <input class="inputs" type="text" maxLength="1" />
-          </div>
-          <div class="col-third">
-            <input class="inputs" type="text" maxLength="1" />
-          </div>
-          <div class="col-third">
-            <input class="inputs" type="text" maxLength="1"/>
-          </div>
-          <div class="col-third">
-            <input class="inputs" type="text" maxLength="1" />
-          </div>
-        </div>
+        <h4>PIN 
+        (To reset Password)</h4>
+       
+            
+          
+          <input class="inputs" style = "width:40px;" type="text" maxlength="1" />
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
+        
       </div>
       <div class="col-half">
         <h4>Gender</h4>
@@ -108,8 +97,9 @@ $(".inputs").keyup(function () {
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   
+  
 
-    <script  src="js/index.js"></script>
+    <script  src="js/tab.js"></script>
 
 
 
