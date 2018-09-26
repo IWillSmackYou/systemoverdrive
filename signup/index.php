@@ -21,8 +21,16 @@
   <form>
     <div class="row">
       <h4>Account</h4>
+       <div class="input-group input-group-icon">
+        <input type="text" placeholder="Username"/>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Full Name"/>
+        <input type="text" placeholder="First Name"/>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div> 
+      <div class="input-group input-group-icon">
+        <input type="text" placeholder="Last Name"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
@@ -34,17 +42,11 @@
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email Adress"/>
-        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+        <input type="text" placeholder="Address"/>
+        <div class="input-icon"><i class="fa fa-address-book-o"></i></div>
       </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email Adress"/>
-        <div class="input-icon"><i class="fa fa-envelope"></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email Adress"/>
-        <div class="input-icon"><i class="fa fa-envelope"></i></div>
-      </div>
+     
+     
     </div>
     <div class="row">
       <div class="col-half">
@@ -74,8 +76,8 @@
 
 
 
-<div class="row">
-<input type="submit" value="Emerald" class="emerald-flat-button">
+<div class="row" style="padding-top:22px;">
+<input type="submit" value="Sign Up" class="emerald-flat-button">
 </div>
 
 
