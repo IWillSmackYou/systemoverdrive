@@ -170,7 +170,7 @@ if($count == 1) {
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 					
-					<div class="text-center p-t-5 p-b-18">
+					<div class="text-center p-t-15 p-b-18">
 						<a href="#">
 							Forgot password?
 						</a>
