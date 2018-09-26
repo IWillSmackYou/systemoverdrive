@@ -64,7 +64,11 @@ if($gClient->getAccessToken()){
 
 	 header("Location: ../signup/merge.php");
 	}else{
+		$_SESSION['logged_user_email'] = $email;
+	 
 
+
+		header("Location: ../index.php");
 	}
   }
   else{
