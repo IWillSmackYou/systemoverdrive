@@ -59,7 +59,7 @@ if($gClient->getAccessToken()){
 	if($count == 1) {
 
 	 $_SESSION['logged_user_email'] = $email;
-	 
+	 $_SESSION['oauth_provider'] = $gpUserData['oauth_uid'];
 
 
 	 header("Location: ../signup/merge.php?tokenid=" . $gpUserData['oauth_uid']);
@@ -69,7 +69,7 @@ if($gClient->getAccessToken()){
 	 $_SESSION['oauth_provider'] = $gpUserData['oauth_uid'];
 
 
-		header("Location: ../index.php");
+		header("Location: ../account/index.php");
 	}
   }
   else{
