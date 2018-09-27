@@ -1,3 +1,7 @@
+<?php 
+require_once '../google/User.class.php';
+require_once("../db/config.php");
+?>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -19,7 +23,7 @@
 
   
 <div class="container">
-  <form>
+  <form  method="POST" action="index.php">
     <div class="row">
       <h4>Account</h4>
        <div class="input-group input-group-icon">
