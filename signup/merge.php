@@ -1,6 +1,30 @@
 <?php
+require_once("../db/config.php");
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+   // username and password sent from form 
+$username = mysqli_real_escape_string($db,$_POST['username']);
 
-  
+$pass = mysqli_real_escape_string($db,$_POST['pass']); 
+
+$pwhash = hash('sha256',$pass);
+$address = mysqli_real_escape_string($db,$_POST['address']); 
+$PIN = mysqli_real_escape_string($db,$_POST['PIN']); 
+
+$sql = "UPDATE clients SET username = '$username' , password = '$pwhash' , address = '$address' , PIN = '$PIN' WHERE oauth_uid = '" . $_GET['tokenid'] . "'";
+$result = mysqli_query($db,$sql);
+
+
+
+
+
+
+}else if(ISSET($_GET['tokenid'])){
+
+  $tokenid = $_GET['tokenid'];
+
+}else{
+  header("Location: ../account/index.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -19,33 +43,33 @@
   
 </head>
 
-<body style="background-image:url(img/bg.jpg); background-size: cover; background-repeat: no-repeat;">
+<body style="background-image:url(img/bg.jpg); background-size: cover; background-repeat: no-repeat;padding-top:5%;">
 
   
 <div class="container">
-  <form method="POST" action ="merge.php">
+  <form method="POST" action ="merge.php?tokenid=<?php echo $tokenid; ?>">
 
     <div class="row">
     
       <h2>One Last Thing...</h2>
       <h4>System OverDrive Account Setup</h4>
        <div class="input-group input-group-icon">
-        <input type="text" placeholder="Username"/>
+        <input type="text" placeholder="Username" name="username"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
 
        <div class="input-group input-group-icon">
-        <input type="password" placeholder="Password"/>
+        <input type="password" placeholder="Password" name="pass"/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
      
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Address"/>
+        <input type="text" placeholder="Address" name="address"/>
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
       </div>
 
       <div class="input-group input-group-icon">
-        <input type="text" maxlength="4" placeholder="4 Characters PIN (To be used to reset password)"/>
+        <input type="text" name="PIN" maxlength="4" placeholder="4 Characters PIN (To be used to reset password)"/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
      

@@ -49,7 +49,7 @@ if($gClient->getAccessToken()){
   if($count == 1 ) {
 	// session_register("username");
 
-	$sql = "SELECT id FROM clients WHERE oauth_uid = '" . $gpUserData['oauth_uid']. "' AND username = '' AND password = '' AND address = '' AND PIN = ''";
+	$sql = "SELECT id FROM clients WHERE oauth_uid = '" . $gpUserData['oauth_uid']. "' AND username = '' AND password = '' AND address = '' AND PIN = '0'";
 	$result = mysqli_query($db,$sql);
 	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
    
@@ -62,7 +62,7 @@ if($gClient->getAccessToken()){
 	 
 
 
-	 header("Location: ../signup/merge.php");
+	 header("Location: ../signup/merge.php?tokenid=" . $gpUserData['oauth_uid']);
 	}else{
 		$_SESSION['logged_user_email'] = $email;
 	 
