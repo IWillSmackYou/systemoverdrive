@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2018 at 03:20 AM
+-- Generation Time: Sep 27, 2018 at 09:58 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -52,7 +52,8 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `username`, `password`, `address`, `PIN`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`) VALUES
-(1, 'admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'BLK 534 Ang Mo Kio Ave 3', 1234, '', '', 'Admin', 'Admin', 'admin@admin.com.sg', 'Male', NULL, NULL, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, 'admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'BLK 534 Ang Mo Kio Ave 3', 1234, '', '', 'Admin', 'Admin', 'admin@admin.com.sg', 'Male', NULL, NULL, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'ccminer', '22963987ae9c86cec52b0b20793a62d6fb19ea777a73b5e3d31ccea1a8b2cae0', 'Blk 34 Ang Mo Kio Drive ', 1234, 'google', '101270329658090744283', 'CC', 'Miners', 'ccminers.org@gmail.com', '', 'en', 'https://lh6.googleusercontent.com/-uvWQGQgY36k/AAAAAAAAAAI/AAAAAAAAAAk/rMwO63CERsU/photo.jpg', 'https://plus.google.com/101270329658090744283', '2018-09-27 14:35:42', '2018-09-27 14:35:42');
 
 --
 -- Indexes for dumped tables
@@ -72,7 +73,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
