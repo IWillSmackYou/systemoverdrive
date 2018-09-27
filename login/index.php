@@ -65,7 +65,8 @@ if($gClient->getAccessToken()){
 	 header("Location: ../signup/merge.php?tokenid=" . $gpUserData['oauth_uid']);
 	}else{
 		$_SESSION['logged_user_email'] = $email;
-	 
+
+	 $_SESSION['oauth_provider'] = $gpUserData['oauth_uid'];
 
 
 		header("Location: ../index.php");
@@ -77,7 +78,7 @@ if($gClient->getAccessToken()){
 $gpUserData['oauth_provider'] = 'google';
 $userData = $user->checkUser($gpUserData);
 
-header("Location: ../signup/index.php");
+header("Location: ../signup/merge.php?tokenid=" . $gpUserData['oauth_uid']);
 
 
 

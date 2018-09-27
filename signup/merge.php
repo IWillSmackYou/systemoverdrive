@@ -13,7 +13,7 @@ $PIN = mysqli_real_escape_string($db,$_POST['PIN']);
 $sql = "UPDATE clients SET username = '$username' , password = '$pwhash' , address = '$address' , PIN = '$PIN' WHERE oauth_uid = '" . $_GET['tokenid'] . "'";
 $result = mysqli_query($db,$sql);
 
-
+header("Location: ../account/index.php");
 
 
 
