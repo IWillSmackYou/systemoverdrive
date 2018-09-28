@@ -11,7 +11,7 @@ body {
   background-color: #e3e3e3;
 }
 h4 {
-  color: #7ed321;
+
 }
 input,
 input[type="radio"] + label,
@@ -66,9 +66,9 @@ input[type="radio"]:checked + label,
 input:checked + label:before,
 select:focus,
 select:active {
-  background-color: #7ed321;
+  background-color:#B6B6B6;
   color: #fff;
-  border-color: #64ac15;
+  border-color: #6D6D6D;
 }
 input[type="checkbox"] {
   display: none;
