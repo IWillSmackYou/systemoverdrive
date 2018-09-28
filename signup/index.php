@@ -29,27 +29,27 @@ require_once("../db/config.php");
     <div class="row">
       <h4>Account</h4>
        <div class="input-group input-group-icon">
-        <input type="text" placeholder="Username"/>
+        <input type="text" placeholder="Username" name="username"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="First Name"/>
+        <input type="text" placeholder="First Name" name="firstname"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div> 
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Last Name"/>
+        <input type="text" placeholder="Last Name" name="lastname"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email"/>
+        <input type="email" placeholder="Email" name="email"/>
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="Password"/>
+        <input type="password" placeholder="Password" name="pass"/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Address"/>
+        <input type="text" placeholder="Address" name="address" name="address"/>
         <div class="input-icon"><i class="fa fa-picture-o"></i></div>
       </div>
      
