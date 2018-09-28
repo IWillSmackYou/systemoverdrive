@@ -25,7 +25,7 @@ require_once("../db/config.php");
 
   
 <div class="container">
-  <form  method="POST" action="validate.php">
+  <form  method="POST" action="auth.php">
     <div class="row">
       <h4>Account</h4>
        <div class="input-group input-group-icon">
