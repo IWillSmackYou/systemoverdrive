@@ -2,7 +2,16 @@
 require_once '../google/User.class.php';
 require_once("../db/config.php");
 
+if(ISSET($_GET['error'])){
 
+
+if($_GET['error'] == 0){
+  echo"<div class='alert alert-warning'>
+  <strong>Warning!</strong> Indicates a warning that might need attention.
+</div>";
+}
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -62,18 +71,18 @@ require_once("../db/config.php");
        
             
           
-          <input class="inputs" style = "width:40px;" type="text" maxlength="1" />
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
+          <input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN1"/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN2"/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN3"/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN4"/>
         
       </div>
       <div class="col-half">
         <h4>Gender</h4>
         <div class="input-group">
-          <input type="radio" name="gender" value="male" id="gender-male"/>
+          <input type="radio" name="gender" value="Male" id="gender-male"/>
           <label for="gender-male">Male</label>
-          <input type="radio" name="gender" value="female" id="gender-female"/>
+          <input type="radio" name="gender" value="Female" id="gender-female"/>
           <label for="gender-female">Female</label>
         </div>
       </div>

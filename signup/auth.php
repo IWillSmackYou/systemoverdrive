@@ -1,5 +1,5 @@
 <?php 
-
+require_once("../db/config.php");
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
@@ -11,7 +11,7 @@ $pass = mysqli_real_escape_string($db,$_POST['pass']);
 $pwhash = hash('sha256',$pass);
 $email = mysqli_real_escape_string($db,$_POST['email']); 
 $address = mysqli_real_escape_string($db,$_POST['address']); 
-$PIN = mysqli_real_escape_string($db,$_POST['PIN']); 
+$PIN = mysqli_real_escape_string($db,$_POST['PIN1']) . mysqli_real_escape_string($db,$_POST['PIN2']) . mysqli_real_escape_string($db,$_POST['PIN3']) . mysqli_real_escape_string($db,$_POST['PIN4']); 
 $gender = mysqli_real_escape_string($db,$_POST['gender']); 
 $firstname = mysqli_real_escape_string($db,$_POST['firstname']); 
 $lastname = mysqli_real_escape_string($db,$_POST['lastname']); 
@@ -26,12 +26,12 @@ $count = mysqli_num_rows($result);
 // If result matched $myusername and $mypassword, table row must be 1 row
   
 if($count == 1) {
-    echo "Username already existed. Please use a different username.";
+    
     
    
-   header("Location: index.php");
+   header("Location: index.php?error=0");
 }else {
-    $sql = "INSERT INTO clients (username, password, first_name, last_name, email, PIN, address, gender) VALUES ('$username', '$pwhash' , '$firstname' , '$lastname', '$email', '$PIN')";
+    $sql = "INSERT INTO clients (username, password, first_name, last_name, email, PIN, address, gender) VALUES ('$username', '$pwhash' , '$firstname' , '$lastname', '$email', '$PIN', '$address', '$gender')";
     $result = mysqli_query($db,$sql);
 }
 
