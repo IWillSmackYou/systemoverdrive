@@ -2,7 +2,16 @@
 require_once '../google/User.class.php';
 require_once("../db/config.php");
 
+if(ISSET($_GET['error'])){
 
+
+if($_GET['error'] == 0){
+  echo"<div class='alert alert-warning'>
+  <strong>Warning!</strong> Indicates a warning that might need attention.
+</div>";
+}
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -25,31 +34,31 @@ require_once("../db/config.php");
 
   
 <div class="container">
-  <form  method="POST" action="validate.php">
+  <form  method="POST" action="auth.php">
     <div class="row">
       <h4>Account</h4>
        <div class="input-group input-group-icon">
-        <input type="text" placeholder="Username"/>
+        <input type="text" placeholder="Username" name="username"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="First Name"/>
+        <input type="text" placeholder="First Name" name="firstname"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div> 
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Last Name"/>
+        <input type="text" placeholder="Last Name" name="lastname"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email"/>
+        <input type="email" placeholder="Email" name="email"/>
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="Password"/>
+        <input type="password" placeholder="Password" name="pass"/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Address"/>
+        <input type="text" placeholder="Address" name="address" name="address"/>
         <div class="input-icon"><i class="fa fa-picture-o"></i></div>
       </div>
      
@@ -62,18 +71,18 @@ require_once("../db/config.php");
        
             
           
-          <input class="inputs" style = "width:40px;" type="text" maxlength="1" />
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" />
+          <input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN1"/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN2"/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN3"/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN4"/>
         
       </div>
       <div class="col-half">
         <h4>Gender</h4>
         <div class="input-group">
-          <input type="radio" name="gender" value="male" id="gender-male"/>
+          <input type="radio" name="gender" value="Male" id="gender-male"/>
           <label for="gender-male">Male</label>
-          <input type="radio" name="gender" value="female" id="gender-female"/>
+          <input type="radio" name="gender" value="Female" id="gender-female"/>
           <label for="gender-female">Female</label>
         </div>
       </div>
