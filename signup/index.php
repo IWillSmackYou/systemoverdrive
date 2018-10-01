@@ -2,16 +2,7 @@
 require_once '../google/User.class.php';
 require_once("../db/config.php");
 
-if(ISSET($_GET['error'])){
 
-
-if($_GET['error'] == 0){
-  echo"<div class='alert alert-warning'>
-  <strong>Warning!</strong> Indicates a warning that might need attention.
-</div>";
-}
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -32,9 +23,22 @@ if($_GET['error'] == 0){
 
 <body style="background-image:url(img/bg.jpg); background-size: cover; background-repeat: no-repeat;">
 
+
   
 <div class="container">
   <form  method="POST" action="auth.php">
+  <?php
+if(ISSET($_GET['error'])){
+
+
+  if($_GET['error'] == 0){
+    echo"<script>window.alert('Username already existed')</script>";
+  }else if($_GET['error'] == 1){
+    echo"<script>window.alert('One or more field(s) are empty, please fill up all fields.')</script>";
+  }
+  
+  }
+  ?>
     <div class="row">
       <h4>Account</h4>
        <div class="input-group input-group-icon">
