@@ -199,11 +199,11 @@ ol {
 .comment-form label {
 	/* FF3.6-15 */
 	/* Chrome10-25,Safari5.1-6 */
-	background: -webkit-gradient(linear, left top, right top, from(#3e2bce), color-stop(100%, #2dd3aa), color-stop(100%, #2dd3aa), to(#2dd3aa));
-	background: -o-linear-gradient(left, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
-	background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
+	background: -webkit-gradient(linear, left top, right top, from(#C4B18E), color-stop(100%, #81745D), color-stop(100%, #81745D), to(#81745D));
+	background: -o-linear-gradient(left, #C4B18E 0%, #81745D 100%, #81745D 100%, #81745D 100%);
+	background: linear-gradient(to right, #C4B18E 0%, #81745D 100%, #81745D 100%, #81745D 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e2bce', endColorstr='#2dd3aa', GradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C4B18E', endColorstr='#81745D', GradientType=1);
 	/* IE6-9 */
 }
 
@@ -344,7 +344,7 @@ ol {
 	display: block;
 	background-image: url("../img/hero-bg.png");
 	background-size: cover;
-	background-color: #f3f7f9;
+	background-color:#fff;
 	background-position: right top;
 	background-repeat: no-repeat;
 	position: relative;
@@ -510,7 +510,7 @@ ol {
 
 .fact h2 {
 	float: left;
-	color: #16d0c5;
+	color:whitesmoke;
 	font-size: 60px;
 	margin-right: 20px;
 }
