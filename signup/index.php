@@ -38,27 +38,27 @@ if($_GET['error'] == 0){
     <div class="row">
       <h4>Account</h4>
        <div class="input-group input-group-icon">
-        <input type="text" placeholder="Username" name="username"/>
+        <input type="text" placeholder="Username" name="username" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="First Name" name="firstname"/>
+        <input type="text" placeholder="First Name" name="firstname" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div> 
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Last Name" name="lastname"/>
+        <input type="text" placeholder="Last Name" name="lastname" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email" name="email"/>
+        <input type="email" placeholder="Email" name="email" required/>
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="Password" name="pass"/>
+        <input type="password" placeholder="Password" name="pass" required/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Address" name="address" name="address"/>
+        <input type="text" placeholder="Address" name="address" name="address" required/>
         <div class="input-icon"><i class="fa fa-picture-o"></i></div>
       </div>
      
@@ -71,16 +71,16 @@ if($_GET['error'] == 0){
        
             
           
-          <input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN1"/>
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN2"/>
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN3"/>
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN4"/>
+          <input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN1" required/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN2" required/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN3" required/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN4" required/>
         
       </div>
       <div class="col-half">
         <h4>Gender</h4>
         <div class="input-group">
-          <input type="radio" name="gender" value="Male" id="gender-male"/>
+          <input type="radio" name="gender" value="Male" id="gender-male" required/>
           <label for="gender-male">Male</label>
           <input type="radio" name="gender" value="Female" id="gender-female"/>
           <label for="gender-female">Female</label>
