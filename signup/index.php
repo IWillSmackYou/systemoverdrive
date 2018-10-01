@@ -2,16 +2,7 @@
 require_once '../google/User.class.php';
 require_once("../db/config.php");
 
-if(ISSET($_GET['error'])){
 
-
-if($_GET['error'] == 0){
-  echo"<div class='alert alert-warning'>
-  <strong>Warning!</strong> Indicates a warning that might need attention.
-</div>";
-}
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -32,33 +23,46 @@ if($_GET['error'] == 0){
 
 <body style="background-image:url(img/bg.jpg); background-size: cover; background-repeat: no-repeat;">
 
+
   
 <div class="container">
   <form  method="POST" action="auth.php">
+  <?php
+if(ISSET($_GET['error'])){
+
+
+  if($_GET['error'] == 0){
+    echo"<script>window.alert('Username already existed')</script>";
+  }else if($_GET['error'] == 1){
+    echo"<script>window.alert('One or more field(s) are empty, please fill up all fields.')</script>";
+  }
+  
+  }
+  ?>
     <div class="row">
       <h4>Account</h4>
        <div class="input-group input-group-icon">
-        <input type="text" placeholder="Username" name="username"/>
+        <input type="text" placeholder="Username" name="username" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="First Name" name="firstname"/>
+        <input type="text" placeholder="First Name" name="firstname" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div> 
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Last Name" name="lastname"/>
+        <input type="text" placeholder="Last Name" name="lastname" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="email" placeholder="Email" name="email"/>
+        <input type="email" placeholder="Email" name="email" required/>
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="Password" name="pass"/>
+        <input type="password" placeholder="Password" name="pass" required/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="Address" name="address" name="address"/>
+        <input type="text" placeholder="Address" name="address" name="address" required/>
         <div class="input-icon"><i class="fa fa-picture-o"></i></div>
       </div>
      
@@ -71,16 +75,16 @@ if($_GET['error'] == 0){
        
             
           
-          <input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN1"/>
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN2"/>
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN3"/>
-<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN4"/>
+          <input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN1" required/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN2" required/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN3" required/>
+<input class="inputs" style = "width:40px;" type="text" maxlength="1" name="PIN4" required/>
         
       </div>
       <div class="col-half">
         <h4>Gender</h4>
         <div class="input-group">
-          <input type="radio" name="gender" value="Male" id="gender-male"/>
+          <input type="radio" name="gender" value="Male" id="gender-male" required/>
           <label for="gender-male">Male</label>
           <input type="radio" name="gender" value="Female" id="gender-female"/>
           <label for="gender-female">Female</label>

@@ -30,9 +30,14 @@ if($count == 1) {
     
    
    header("Location: index.php?error=0");
-}else {
+}else if (!empty($username) && !empty($gender)) {
     $sql = "INSERT INTO clients (username, password, first_name, last_name, email, PIN, address, gender) VALUES ('$username', '$pwhash' , '$firstname' , '$lastname', '$email', '$PIN', '$address', '$gender')";
     $result = mysqli_query($db,$sql);
+
+    header("Location: ../index.php");
+}else{
+    
+   header("Location: index.php?error=1");
 }
 
 
