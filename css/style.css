@@ -36,6 +36,10 @@ h6 {
 	font-family: "Futura", sans-serif;
 }
 
+h5{
+	color:white;
+}
+
 h1 {
 	font-size: 70px;
 }
@@ -145,7 +149,7 @@ ol {
 	font-family: "Futura", sans-serif;
 	min-width: 170px;
 	text-align: center;
-	border: 2px solid #7ad4cc;
+	border: 2px solid white;
 	cursor: pointer;
 	color: #fff;
 }
@@ -171,7 +175,11 @@ ol {
 }
 
 .site-btn.sb-gradients.sbg-line {
-	color: #20509e;
+	color: #81745D;
+	z-index: 1;
+}
+.site-btn.sb-gradients.sbg-line:hover {
+	color: white;
 	z-index: 1;
 }
 
@@ -874,7 +882,7 @@ ol {
 -----------------------*/
 
 .footer-widget span {
-	color: #acb9cc;
+	color: white;
 }
 
 .footer-widget p {
@@ -892,7 +900,7 @@ ol {
 
 .footer-widget ul a {
 	font-size: 16px;
-	color: #75849a;
+	color: white;
 	display: block;
 	margin-bottom: 12px;
 }
@@ -947,7 +955,7 @@ ol {
 }
 
 .footer-nav li a {
-	color: #75849a;
+	color: white;
 	font-size: 14px;
 	margin-left: 20px;
 }
