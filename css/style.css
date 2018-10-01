@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #20509e;
+	color: gray;
 	margin: 0;
 	font-weight: 500;
 	font-family: "Futura", sans-serif;
@@ -368,7 +368,7 @@ ol {
 }
 
 .hero-text h2 span {
-	color: #16d0c5;
+	color: #AC8D3F;
 }
 
 .hero-text h4 {
