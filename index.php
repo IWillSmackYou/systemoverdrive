@@ -357,12 +357,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 			</div>
 			<div class="footer-bottom">
-				<div class="row">
-					<div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
+				
+				<!--	<div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
 						<a href=""><img src="img/appstore.png" alt="" class="mr-2"></a>
 						<a href=""><img src="img/playstore.png" alt=""></a>
-					</div>
-					<div class="col-lg-8 text-center text-lg-right">
+					</div>-->
+					<div class="col-lg-12 text-center text-lg-center">
 						<ul class="footer-nav">
 							<li><a href="">DPA</a></li>
 							<li><a href="">Terms of Use</a></li>
@@ -371,7 +371,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<li><a href="">(123) 456-7890</a></li>
 						</ul>
 					</div>
-				</div>
+				
 			</div>
 		</div>
 	</footer>
