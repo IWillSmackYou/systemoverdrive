@@ -5,6 +5,9 @@ require_once '../google/gpConfig.php';
 require_once '../google/User.class.php';
 require_once("../db/config.php");
 
+
+
+
 if(isset($_GET['code'])){
     $gClient->authenticate($_GET['code']);
     $_SESSION['token'] = $gClient->getAccessToken();
@@ -59,17 +62,23 @@ if($gClient->getAccessToken()){
 	if($count == 1) {
 
 	 $_SESSION['logged_user_email'] = $email;
+	 $_SESSION['logged_user_firstname'] = $gpUserData['first_name'];
+	 $_SESSION['logged_user_lastname'] = $gpUserData['last_name'];
 	 $_SESSION['oauth_provider'] = $gpUserData['oauth_uid'];
 
 
 	 header("Location: ../signup/merge.php?tokenid=" . $gpUserData['oauth_uid']);
 	}else{
-		$_SESSION['logged_user_email'] = $email;
 
+		
+		$_SESSION['logged_user_email'] = $email;
+	
+		$_SESSION['logged_user_firstname'] = $gpUserData['first_name'];
+		$_SESSION['logged_user_lastname'] = $gpUserData['last_name'];
 	 $_SESSION['oauth_provider'] = $gpUserData['oauth_uid'];
 
 
-		header("Location: ../account/index.php");
+		header("Location: ../index.php");
 	}
   }
   else{
@@ -117,6 +126,7 @@ $count = mysqli_num_rows($result);
   
 if($count == 1) {
   // session_register("username");
+
    $_SESSION['logged_user'] = $username;
    
    header("Location: ../index.php");

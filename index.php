@@ -1,3 +1,7 @@
+<?php
+  session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,15 +45,40 @@
 			</a>
 			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
 			<a href="" class="user"><i class="fa fa-user"></i></a>
-			<a href="signup/index.php" class="site-btn">Sign Up Free</a>
+			<?php
+if(ISSET($_SESSION['logged_user'])){
+
+echo "<a href='account/index.php' class='site-btn'>Welcome Back, " . $_SESSION['logged_user'] . "</a>";
+
+
+}else if(ISSET($_SESSION['logged_user_lastname']) && ISSET($_SESSION['oauth_provider'])){
+	echo "<a href='account/index.php' class='site-btn'>Welcome Back, " . $_SESSION['logged_user_firstname'] . " " . $_SESSION['logged_user_lastname']  . "</a>";
+
+	
+}else{
+	echo '<a href="signup/index.php" class="site-btn">Sign Up Free</a>';
+}
+?>
+			
 			<nav class="main-menu">
 				<ul class="menu-list">
 					
 					<li><a href="">Features</a></li>
-					<li><a href="">News</a></li>
+				
 					<li><a href="">About</a></li>
 					<li><a href="">Contact</a></li>
-					<li><a href="login/index.php">Sign In</a></li>
+					<?php
+if(ISSET($_SESSION['logged_user'])){
+		echo "<li><a href='login/signout.php'>Sign Out</a></li>";
+}else if(ISSET($_SESSION['logged_user_lastname']) && ISSET($_SESSION['oauth_provider'])){
+
+	echo "<li><a href='login/signout.php'>Sign Out</a></li>";
+	
+}else{
+	echo "<li><a href='login/index.php'>Sign In</a></li>";
+}
+?>
+					
 				</ul>
 			</nav>
 		</div>
